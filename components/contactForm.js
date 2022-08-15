@@ -1,11 +1,26 @@
 import {Container,Flex,Box, Heading, Text, IconButton, Button, VStack, HStack, Wrap, WrapItem, FormControl, FormLabel, Input, InputGroup, InputLeftElement,  Textarea,} from '@chakra-ui/react';
 import {MdPhone,MdEmail,MdLocationOn,MdFacebook,MdOutlineEmail,} from 'react-icons/md';
 import { BsGithub, BsDiscord, BsPerson } from 'react-icons/bs';
-  
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
+
+ 
 
 
 export default function Contactform() {
-    return (
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('180DC_DEV_SERV', 'template_6vso97m', form.current, 'pts1kV_kYrcT8ugEf')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+    }  
+  return (
       <Container bg="#9DC4FB" maxW="full" mt={0} centerContent overflow="hidden">
         <Flex>
           <Box bg="#02054B" color="white" borderRadius="lg" >
@@ -40,31 +55,36 @@ export default function Contactform() {
                 <WrapItem>
                   <Box bg="white" borderRadius="lg">
                     <Box m={8} color="#0B0E3F">
+                    <form ref={form} onSubmit={sendEmail}>
                       <VStack spacing={5}>
-                        <FormControl id="name">
+                      <FormControl name="from_name">
                           <FormLabel>Your Name</FormLabel>
                           <InputGroup borderColor="#E0E1E7">
                             <InputLeftElement pointerEvents="none" children={<BsPerson color="gray.800" />}/>
-                                <Input type="text" size="md" />
+                                <Input type="text" name="from_name" size="md" />
                           </InputGroup>
                         </FormControl>
-                        <FormControl id="name">
+
+                        <FormControl name="reply_to">
                           <FormLabel>Mail</FormLabel>
                           <InputGroup borderColor="#E0E1E7">
                             <InputLeftElement pointerEvents="none" children={<MdOutlineEmail color="gray.800" />}/>
-                            <Input type="text" size="md" />
+                            <Input type="email" name="reply_to" size="md" />
                           </InputGroup>
                         </FormControl>
-                        <FormControl id="name">
+
+                        <FormControl name="message">
                           <FormLabel>Message</FormLabel>
-                          <Textarea borderColor="gray.300" _hover={{borderRadius: 'gray.300',}} placeholder="message"/>
+                          <Textarea name="message" borderColor="gray.300" _hover={{borderRadius: 'gray.300',}} placeholder="message"/>
                         </FormControl>
-                        <FormControl id="name" float="right">
-                          <Button variant="solid" bg="#0D74FF" color="white" _hover={{}}>
+
+                        <FormControl id="submit-btn" float="right">
+                          <Button value='Send' type='submit' variant="solid" bg="#0D74FF" color="white" _hover={{}}>
                             Send Message
                           </Button>
                         </FormControl>
                       </VStack>
+                      </form>
                     </Box>
                   </Box>
                 </WrapItem>
@@ -75,4 +95,6 @@ export default function Contactform() {
       </Container>
     );
   }
+
+
   
