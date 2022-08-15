@@ -21,9 +21,9 @@ export default function Contactform() {
       });
     }  
   return (
-      <Container bg="#9DC4FB" maxW="full" mt={0} centerContent overflow="hidden">
+      <Container maxW="full" mt={0} centerContent overflow="hidden">
         <Flex>
-          <Box bg="#02054B" color="white" borderRadius="lg" >
+          <Box bg="#292b24" color="white" borderRadius="lg" >
             <Box p={4}>
               <Wrap spacing={{ base: 20, sm: 3, md: 5, lg: 20 }}>
                 <WrapItem>
@@ -60,7 +60,7 @@ export default function Contactform() {
                       <FormControl name="from_name">
                           <FormLabel>Your Name</FormLabel>
                           <InputGroup borderColor="#E0E1E7">
-                            <InputLeftElement pointerEvents="none" children={<BsPerson color="gray.800" />}/>
+                            <InputLeftElement pointerEvents="none" c/>
                                 <Input type="text" name="from_name" size="md" />
                           </InputGroup>
                         </FormControl>
@@ -68,7 +68,7 @@ export default function Contactform() {
                         <FormControl name="reply_to">
                           <FormLabel>Mail</FormLabel>
                           <InputGroup borderColor="#E0E1E7">
-                            <InputLeftElement pointerEvents="none" children={<MdOutlineEmail color="gray.800" />}/>
+                            <InputLeftElement pointerEvents="none" />
                             <Input type="email" name="reply_to" size="md" />
                           </InputGroup>
                         </FormControl>
@@ -80,7 +80,7 @@ export default function Contactform() {
 
                         <FormControl id="submit-btn" float="right">
                           <Button value='Send' type='submit' variant="solid" bg="#0D74FF" color="white" _hover={{}}>
-                            Send Message
+                            Send 
                           </Button>
                         </FormControl>
                       </VStack>

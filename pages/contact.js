@@ -30,7 +30,7 @@ import {
   export default function Contact() {
     return (
         <Box paddingY={12}>  
-      <Container borderRadius={5} paddingY={5} bg="#9DC4FB" maxW="full" mt={0} centerContent overflow="hidden">
+      <Container borderRadius={5} paddingY={5} bg="#2b2b28" maxW="full" mt={0} centerContent overflow="hidden">
             <Contactform/>
       </Container>
       </Box>

@@ -19,7 +19,7 @@ const About = () => {
                                 <Box>To help non-profits and social enterprises overcome challenges for the greatest possible social impact by providing affordable and high quality consulting services.</Box>
                             </Container>
                             <Container paddingBottom={5} borderRadius={5} bg="whiteAlpha.400" textAlign="center"><Heading paddingBottom={4} size="lg">VISION</Heading>
-                                <Box>To ensure that the movement towards resolving pressing world issues such as poverty, global warming, etc. is unfettered by constraints and thereby develop the next generation of leaders.</Box>
+                                <Box>To ensure that the movement towards resolving pressing world issues is unfettered by constraints and thereby develop the next generation of leaders.</Box>
                             </Container>
                         </HStack>
                     </Container>
